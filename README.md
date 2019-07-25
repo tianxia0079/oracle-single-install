@@ -39,3 +39,11 @@ chmod +x oracle_install.sh
 
 
 >注意: 在初始化cdb过程中如果出现 `No options to container mapping specified, no options will be installed in any containers` 信息不是报错，因为cdb初始化时间比较长，可以通过查看以上提示下给出的日志路径查看初始化情况
+
+2019年7月25日 实际安装遇到问题处理
+环境 : vmware centos7 oracle12c
+报错1：没有继续安装，中途停止，但是有日志输出，看日志提示  用户不在 dba 组，新建dba组 添加用户到组
+groupadd dba
+usermod -G root,oinstall,dba oracle
+
+
